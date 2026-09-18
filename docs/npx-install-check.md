@@ -1,5 +1,17 @@
 # npx 安装实测
 
+## 新增两本书的公网安装
+
+2026-09-18，来源提交 `41e9351`。在新的临时项目执行：
+
+```bash
+npx --yes skills@latest add LearnPrompt/qbs --skill shape-up the-debugging-book -a codex -y
+```
+
+CLI 发现 4 个 Skill，只安装指定的两个。`shape-up` 的 3 个文件和 `the-debugging-book` 的 4 个文件逐个 SHA-256 读回，与仓库一致；未装入父 Skill 或排期草案。这里验证公网发现、安装与文件完整性；[行为试跑](../evals/book-skills-2026-09-18/REPORT.md)单独记录。
+
+## 早期版本安装记录
+
 日期：2026-09-18。安装器：`skills 1.7.0`。来源：公网 `LearnPrompt/qbs`，技能文件版本为 `840b35b`；本次仅修改安装文档与 README 展示，技能包内容未变。
 
 采用 [LearnPrompt 的一行安装规范](https://github.com/LearnPrompt/luban-skill/blob/main/references/house-style.md)；命令形式也与 [laoyeye](https://github.com/LearnPrompt/laoyeye#安装) 一致。参数以 [skills 官方说明](https://github.com/vercel-labs/skills#install-a-skill) 为准。

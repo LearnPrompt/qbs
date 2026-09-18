@@ -69,7 +69,10 @@ def validate(repo):
                     errors.append(f"Broken skill reference: {md.relative_to(repo)} -> {target}")
                 elif not resolved.is_relative_to(skill):
                     errors.append(f"Runtime reference outside standalone skill: {name} -> {target}")
-    for md in list((repo / "books").glob("*.md")) + [repo / "README.md"]:
+    documentation = (list(repo.glob("README*.md"))
+                     + list((repo / "books").glob("*.md"))
+                     + list((repo / "docs").glob("*.md")))
+    for md in documentation:
         if md.is_file():
             for target in local_links(md):
                 if not (md.parent / target).resolve().exists():
@@ -86,4 +89,4 @@ if __name__ == "__main__":
     if failures:
         print("\n".join(failures), file=sys.stderr)
         sys.exit(1)
-    print("PASS: skill packages, standalone references, book catalog and cover links")
+    print("PASS: skill packages, standalone references, book catalog, covers and documentation links")

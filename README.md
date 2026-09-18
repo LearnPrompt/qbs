@@ -1,14 +1,19 @@
+**简体中文** · [English](README.en.md) · [日本語](README.ja.md)
+
 # QBS · 从每天用的 Skill，重新想读一本书
 
 > *「先让一本书帮上今天的忙，再想回去读它。」*
 
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-QBS-blueviolet)](skills/qbs/SKILL.md)
 [![skills.sh](https://skills.sh/b/LearnPrompt/qbs)](https://skills.sh/LearnPrompt/qbs)
+[![Package checks](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml/badge.svg)](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-[为什么做](#我们已经很久没好好读书了) · [从三个麻烦开始](#从三个每天会碰到的麻烦开始) · [一行安装](#安装) · [读到哪了](#这些书现在读到哪了)
+[为什么做](#why-qbs) · [从三个麻烦开始](#everyday-problems) · [一行安装](#install) · [读到哪了](#reading-status)
 
 ---
+
+<a id="why-qbs"></a>
 
 ## 我们已经很久没好好读书了
 
@@ -36,6 +41,8 @@
 
 ---
 
+<a id="everyday-problems"></a>
+
 ## 从三个每天会碰到的麻烦开始
 
 ### 活分出去了，怎么还是得自己盯？
@@ -48,7 +55,7 @@
 
 顺着这个例子，还可以继续追问，团队的产出到底卡在哪里？负责人做什么，才能让大家少绕一点路？
 
-[看排活流程](#负责人照这张图排活) · [这本书与现有草案](books/high-output-management.md)
+[看排活流程](#scheduling-flow) · [这本书与现有草案](books/high-output-management.md)
 
 ### 只想改个小功能，怎么越聊越大？
 
@@ -66,7 +73,7 @@
 
 另一个熟悉的场景，报错出现了，先改个参数试试，再换种写法试试。偶尔好了，却说不清是哪一步起了作用，下次再出现还得重来。
 
-第三本选 Andreas Zeller的《The Debugging Book》。它提供可以直接阅读和运行的在线章节，适合把排错过程拆开看。
+第三本选 Andreas Zeller 的《The Debugging Book》。它提供可以直接阅读和运行的在线章节，适合把排错过程拆开看。
 
 我们准备从「先复现，再提出一个可以被推翻的猜测」开始。让 Codex 在改代码之前说清楚，这次检查要验证什么；结果出来以后，哪些猜测还能成立。最后再用原来的失败案例检查修复。
 
@@ -75,6 +82,8 @@
 [读 Introduction to Debugging](https://www.debuggingbook.org/html/Intro_Debugging.html) · [选书与阅读记录](books/the-debugging-book.md)
 
 ---
+
+<a id="scheduling-flow"></a>
 
 ## 负责人照这张图排活
 
@@ -127,6 +136,8 @@ flowchart TD
 
 ---
 
+<a id="install"></a>
+
 ## 安装
 
 已安装 Node.js、npm（含 `npx`）和 Git 的电脑，直接运行：
@@ -178,6 +189,8 @@ npx skills@latest add LearnPrompt/qbs --skill high-output-management
 
 ---
 
+<a id="reading-status"></a>
+
 ## 这些书现在读到哪了
 
 | 书 | 本次对应的问题 | 进展 |
@@ -193,16 +206,18 @@ npx skills@latest add LearnPrompt/qbs --skill high-output-management
 <details>
 <summary>维护者验证命令</summary>
 
-维护者检出仓库后运行：
+维护者修改或发布仓库时运行，普通用户安装时不必执行：
 
 ```bash
 python3 scripts/validate.py
 python3 -m unittest discover -s tests -v
 ```
 
-第一条检查技能包、独立引用、书籍索引和封面链接；第二条验证安装读回、单独安装、拒绝覆盖、异常时保留用户文件以及包校验的失败路径。这些都是静态或文件操作检查。
+第一条检查技能包、引用、书籍索引、封面和多语言文档链接；第二条验证安装读回、单独安装、拒绝覆盖与失败处理。每次提交和 PR 都由 [GitHub Actions](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml) 自动运行，顶部徽章显示真实状态。检查通过表示这些项目通过，不代表已经验证书籍方法的实际效果。
 
 </details>
+
+<a id="next-book"></a>
 
 ## 从你自己的问题，再找下一本
 

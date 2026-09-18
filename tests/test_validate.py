@@ -64,6 +64,22 @@ class PackagingTests(unittest.TestCase):
         catalog.write_text(json.dumps(data))
         self.assertTrue(any("Duplicate book" in s for s in validate(self.repo)))
 
+    def test_missing_translation_link_is_rejected(self):
+        (self.repo / "README.en.md").write_text("[日本語](README.ja.md)\n", encoding="utf-8")
+        self.assertIn("Broken documentation link: README.en.md -> README.ja.md", validate(self.repo))
+
+    def test_language_switches_resolve_between_readmes(self):
+        (self.repo / "README.md").write_text("[English](README.en.md)\n")
+        (self.repo / "README.en.md").write_text("[日本語](README.ja.md)\n", encoding="utf-8")
+        (self.repo / "README.ja.md").write_text("[中文](README.md)\n", encoding="utf-8")
+        self.assertEqual(validate(self.repo), [])
+
+    def test_missing_documentation_link_is_rejected(self):
+        docs = self.repo / "docs"
+        docs.mkdir()
+        (docs / "install.md").write_text("[instructions](missing.md)\n")
+        self.assertIn("Broken documentation link: docs/install.md -> missing.md", validate(self.repo))
+
 
 if __name__ == "__main__":
     unittest.main()

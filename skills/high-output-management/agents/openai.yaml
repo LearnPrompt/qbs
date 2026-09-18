@@ -1,0 +1,4 @@
+interface:
+  display_name: "High Output Management · 内容团队委派"
+  short_description: "根据公开序言启发，明确内容委派责任、检查共享资源排期并按证据验收"
+  default_prompt: "使用 $high-output-management，根据我提供的团队和任务，把排期维护与交付提醒交给合适角色，给出可执行的任务卡并检查容量和依赖。"

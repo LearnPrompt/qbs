@@ -1,0 +1,4 @@
+interface:
+  display_name: "QBS · 问题到书籍技能"
+  short_description: "从具体问题找到可靠资料，提炼有出处的方法，生成并验证可独立调用的书籍技能"
+  default_prompt: "使用 $qbs，从我眼前的问题开始，找到可核对的书籍资料，做成带来源、适用条件和测试的子 Skill。"

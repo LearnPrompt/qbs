@@ -1,0 +1,4 @@
+interface:
+  display_name: "内容交接检查"
+  short_description: "依据所提供的第2节检查交接材料、缺项影响与部分开工条件"
+  default_prompt: "使用 $content-handoff-check，检查以下内容交接记录，给出材料完整性、缺项影响与下一步建议；如需紧急部分开工，核对双方确认、工作范围和残余风险。"

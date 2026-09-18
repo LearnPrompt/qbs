@@ -14,7 +14,7 @@ Andrew S. Grove 著 · [书籍说明与阅读范围](books/high-output-managemen
 
 ## 马上使用
 
-已经想把排期交给运营，直接用书籍子 Skill：
+当前书籍子 Skill 尚缺完整正文章节，只适合作为场景草案演练：
 
 > 使用 $high-output-management。我想把内容排期维护和交稿提醒交给运营。下面是团队分工、任务和现有约定，请给我一张能转发的任务卡与验收标准：……
 
@@ -29,9 +29,11 @@ Andrew S. Grove 著 · [书籍说明与阅读范围](books/high-output-managemen
 | 入口 | 负责什么 | 当前证据 |
 |---|---|---|
 | [`qbs`](skills/qbs/SKILL.md) · 父 Skill | 选资料、核对阅读范围、提取方法、创建和验证子 Skill | 见[行为试跑](evals/RESULTS.md) |
-| [`high-output-management`](skills/high-output-management/SKILL.md) · 书籍子 Skill | 内容团队的委派、共享资源排期、提醒草稿和证据验收 | 模拟案例；未证明真实团队节省时间 |
+| [`high-output-management`](skills/high-output-management/SKILL.md) · 书籍子 Skill 草案 | 内容团队的委派、共享资源排期、提醒草稿和证据验收 | draft；待补完整相关正文，旧模拟不替代来源验证 |
 
 **第一本书只读了出版社公开的 Ben Horowitz 2015 新版序言，未阅读全文。** 团队产出、提前规划、按任务经验安排指导是来源启发；具体时间字段、冲突检查和验收流程是本项目的场景设计。[查看来源映射](skills/high-output-management/references/source-notes.md)。
+
+本项目现要求书籍方法 Skill 至少完整读一个相关正文章节，并按实际涉及的方法继续补读。序言不能代替正文；当前例子因此退回 draft，待补阅读后重做来源映射及测试。此前三组对照只评价序言启发的旧版，不代表已经测试了充分阅读正文后的 QBS。[查看正文补查记录](docs/chapter-source-gap.md)。
 
 父子表示职责与索引关系：两个 Skill 各自有入口，分别安装。日常处理排期时直接调用子 Skill，不需要每次重新找书。书籍文件放在各自包里，离开本仓库仍能使用；未安装的子 Skill 不会因为索引里列出来就自动可用。
 

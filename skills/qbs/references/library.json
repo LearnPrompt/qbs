@@ -11,11 +11,11 @@
       "skill_path": "skills/high-output-management",
       "book_path": "books/high-output-management.md",
       "scope": "小型内容团队的委派、排期冲突、提醒草稿和证据验收",
-      "reading_scope": "仅出版社公开的 Ben Horowitz 2015 新版序言；非全书提炼",
+      "reading_scope": "仅完整读出版社公开的Ben Horowitz 2015新版序言；正文试读不完整，待补至少一个相关整章",
       "source_url": "https://penguinrandomhousehighereducation.com/book/?isbn=9780679762881#excerpt",
       "cover_url": "https://images4.penguinrandomhouse.com/cover/9780679762881",
       "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/high-output-management.md",
-      "status": "simulated"
+      "status": "draft"
     }
   ]
 }

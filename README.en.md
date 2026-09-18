@@ -32,18 +32,9 @@ That's why we made QBS. Describe the problem in front of you, then let AI find b
 
 ## From a question to your own Skill
 
-```mermaid
-flowchart TD
-    A["You bring a problem<br/>What you want to achieve · Where you are stuck"] --> B["QBS finds books and selects chapters<br/>Check why the book fits this problem"]
-    B --> C{"Are the relevant<br/>main-text chapters available in full?"}
-    C -- "No" --> D["Keep looking for accessible main text<br/>If gaps remain, name the missing chapters and materials needed"]
-    D -- "Obtain the missing material" --> C
-    C -- "Yes" --> E["AI reads the relevant chapters in full<br/>Record methods, conditions, exceptions, and sources"]
-    E --> F["Build your Skill<br/>Inputs → Decision steps → Deliverables → Acceptance checks"]
-    F --> G["Try it on a new task<br/>Check whether the method is applied correctly and the result is useful"]
-    G -- "Checks fail: revise or read more" --> E
-    G -- "Checks pass" --> H["Deliver the Skill, trial output, and reading entry points<br/>Invoke it directly when a similar problem comes up"]
-```
+![QBS: question, book, chapters, Skill, trial, and delivery](assets/qbs-flow.en.png)
+
+[Diagram source](assets/qbs-flow.en.mmd)
 
 The full process is in the [QBS Skill](skills/qbs/SKILL.md). If the main text isn't available, it reports the specific gaps. Finding a title or reading a foreword does not count as reading the relevant chapters.
 
@@ -111,13 +102,37 @@ When a similar problem comes up, invoke the Skill you've made. For a new field, 
 
 ## What we're making through this process
 
-Scheduling was our first case while exploring QBS. We later chose books for two more problems that often come up in Codex. These examples show outputs at different stages, including where the process still has gaps to close.
+We started with two recurring Codex problems, read the relevant chapters in full, and built two independently installable Skills. The scheduling example remains an early draft. QBS is the method used to make these Skills; for a new field, start with QBS again.
 
-| Problem | Book | Current progress |
-|---|---|---|
-| How do you delegate, schedule, and assess work handed to colleagues? | [High Output Management](books/high-output-management.md) | An installable draft exists. Only the publicly available foreword to the newer edition has been read in full; relevant main-text chapters are still missing. It does not yet meet the current QBS chapter-reading requirement. |
-| How do you keep a small feature from growing endlessly? | [Shape Up](books/shape-up.md) | Chapters 3 and 14 read in full; not yet packaged as a child Skill. |
-| After several attempted bug fixes, how do you stop guessing? | [The Debugging Book](books/the-debugging-book.md) | Introduction to Debugging read in full, including exercise solutions; not yet packaged as a child Skill. |
+<table>
+<tr>
+<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — Official print cover"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>Keep a small feature in scope<br><sub>Official print cover</sub></td>
+<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — Official website preview · online textbook"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>Stop guessing while debugging<br><sub>Official website preview · online textbook</sub></td>
+<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — Official cover · early draft"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>Delegate, schedule, and verify<br><sub>Official cover · early draft</sub></td>
+</tr>
+</table>
+
+| Skill | Reading and validation |
+|---|---|
+| `shape-up` | Chapters 3 and 14 read in full; new-task trials cover scope, quality issues near a deadline, and unclear requirements |
+| `the-debugging-book` | Introduction to Debugging read in full, including solutions; trials include an actual code repair and an evidence-limited scenario |
+| `high-output-management` | Installable draft; only the public newer-edition foreword read in full. Relevant main-text chapters are still missing, so it does not meet the current QBS reading requirement |
+
+[Trial inputs, raw outputs, and item-by-item review](evals/book-skills-2026-09-18/REPORT.md). These are simulated tasks, not evidence of real-team effectiveness or superiority over ordinary conversation.
+
+### Try a finished Skill directly
+
+To install just one, keep only its name.
+
+```bash
+npx skills@latest add LearnPrompt/qbs --skill shape-up the-debugging-book
+```
+
+```text
+Use $shape-up. I want to export the current filtered customer list, with an appetite of two half-days. Define necessary scope, deferred items, unknowns, and acceptance checks.
+
+Use $the-debugging-book. Pagination works on the first call, but changing pages repeats old results. Reproduce it, distinguish causes through experiments, fix it, and run regression checks. Point me to the chapter behind the key judgment.
+```
 
 <a id="scheduling-flow"></a>
 

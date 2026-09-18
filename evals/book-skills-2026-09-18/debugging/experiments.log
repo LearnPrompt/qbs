@@ -1,0 +1,11 @@
+Python: 3.9.6
+Platform: macOS-27.0-arm64-arm-64bit
+first: [0, 1]
+same-key offset=2: [0, 1]
+direct slice offset=2: [2, 3]
+new-key offset=2: [2, 3]
+same-key limit=3: [0, 1]
+same-key replacement: [0, 1]
+same-key mutation: [0, 1]
+cache contents: {'items': [0, 1], 'other': [2, 3]}
+after clearing state, offset=2: [2, 3]

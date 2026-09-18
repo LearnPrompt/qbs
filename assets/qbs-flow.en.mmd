@@ -1,0 +1,10 @@
+flowchart TD
+    A["Define the problem<br/>Goal · Blocker · Acceptance"] --> B["Find a book and chapters<br/>Check the fit to the problem"]
+    B --> C{"Are the relevant chapters<br/>available in full?"}
+    C -- "No" --> D["Look for the missing text<br/>Report gaps and materials needed"]
+    D -- "Material obtained" --> C
+    C -- "Yes" --> E["Read the complete chapters<br/>Record methods and sources"]
+    E --> F["Build a standalone Skill<br/>Inputs · Steps · Output · Checks"]
+    F --> G["Try a new task<br/>Check the method and result"]
+    G -- "Revise or read more" --> E
+    G -- "Pass" --> H["Deliver the Skill and trial output<br/>Link back to the book"]

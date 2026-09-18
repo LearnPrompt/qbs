@@ -1,0 +1,98 @@
+test_empty_and_out_of_range_then_tail (test_listing.PageTests) ... FAIL
+test_first_call_defaults (test_listing.PageTests) ... ok
+test_return_container_is_independent (test_listing.PageTests) ... ok
+test_same_key_changed_limit (test_listing.PageTests) ... FAIL
+test_same_key_mutated_rows (test_listing.PageTests) ... FAIL
+test_same_key_next_page (test_listing.PageTests) ... FAIL
+test_same_key_replaced_rows (test_listing.PageTests) ... FAIL
+test_tuple_input_returns_list (test_listing.PageTests) ... ok
+
+======================================================================
+FAIL: test_empty_and_out_of_range_then_tail (test_listing.PageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./test_listing.py", line 38, in test_empty_and_out_of_range_then_tail
+    self.assertEqual(listing.page('items', [0, 1, 2], 2, 10), [2])
+AssertionError: Lists differ: [] != [2]
+
+Second list contains 1 additional elements.
+First extra element 0:
+2
+
+- []
++ [2]
+?  +
+
+
+======================================================================
+FAIL: test_same_key_changed_limit (test_listing.PageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./test_listing.py", line 22, in test_same_key_changed_limit
+    self.assertEqual(listing.page('items', rows, 0, 3), [0, 1, 2])
+AssertionError: Lists differ: [0, 1] != [0, 1, 2]
+
+Second list contains 1 additional elements.
+First extra element 2:
+2
+
+- [0, 1]
++ [0, 1, 2]
+?      +++
+
+
+======================================================================
+FAIL: test_same_key_mutated_rows (test_listing.PageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./test_listing.py", line 32, in test_same_key_mutated_rows
+    self.assertEqual(listing.page('items', rows), [99, 1])
+AssertionError: Lists differ: [0, 1] != [99, 1]
+
+First differing element 0:
+0
+99
+
+- [0, 1]
+?  ^
+
++ [99, 1]
+?  ^^
+
+
+======================================================================
+FAIL: test_same_key_next_page (test_listing.PageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./test_listing.py", line 17, in test_same_key_next_page
+    self.assertEqual(listing.page('items', rows, 2, 2), [2, 3])
+AssertionError: Lists differ: [0, 1] != [2, 3]
+
+First differing element 0:
+0
+2
+
+- [0, 1]
++ [2, 3]
+
+======================================================================
+FAIL: test_same_key_replaced_rows (test_listing.PageTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./test_listing.py", line 26, in test_same_key_replaced_rows
+    self.assertEqual(listing.page('items', [10, 11, 12]), [10, 11])
+AssertionError: Lists differ: [0, 1] != [10, 11]
+
+First differing element 0:
+0
+10
+
+- [0, 1]
++ [10, 11]
+?  +   +
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+FAILED (failures=5)

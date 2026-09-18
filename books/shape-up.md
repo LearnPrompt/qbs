@@ -27,7 +27,9 @@
 | [Narrow down the problem](https://basecamp.com/shapeup/1.2-chapter-03#narrow-down-the-problem) | 找出具体流程中发生的困难 | 将「优化安装体验」收窄到新读者在哪一步装不上 |
 | [Scope hammering](https://basecamp.com/shapeup/3.5-chapter-14#scope-hammering) | 区分必要与可选，对照现状判断改善 | 命令必须跑通；新文档站是否要做，另看本轮目标 |
 
-这些是准备迁移到 Codex 的用法，尚未做成新子 Skill。书中的团队周期也不能直接换成固定的模型运行分钟数。必要的正确性和验证仍要保留，用户明确增加需求时应更新范围。
+这些方法已整理成可独立安装的 [shape-up Skill](../skills/shape-up/SKILL.md)：交付本轮范围卡，区分必要项与可选项，并核对完成证据。书中的团队周期不能直接换成固定的模型运行分钟数。必要的正确性和验证仍要保留，用户明确增加需求时应更新范围。
+
+安装包自带[来源记录](../skills/shape-up/references/source-notes.md)，无需同时安装 QBS。文件结构检查与实际行为试跑是两种验证，不能据打包完成宣称提升了真实项目效率。
 
 ## 带着这个问题接着读
 
@@ -35,11 +37,17 @@
 
 [回第 3 章看这段追问](https://basecamp.com/shapeup/1.2-chapter-03#narrow-down-the-problem)。再读第 14 章，看看可选项没做完时，作者怎样判断能不能交付。
 
-想继续做成 Skill，可以从一个很小的真实任务试起：
+## 直接使用
 
-> 使用 $qbs，围绕 Shape Up 第 3、14 章，处理我这次 README 安装入口改进。先明确读者的具体困难和本轮投入，再确定必须做的范围，交付后用真实安装检查验收。最后给我一个和本次取舍相关的原文章节入口。
+```bash
+npx skills@latest add LearnPrompt/qbs --skill shape-up
+```
 
-这是后续试跑话术，不是已经完成的效果报告。
+安装后，从一个很小的真实任务试起：
+
+> 使用 $shape-up，处理我这次 README 安装入口改进。先明确读者的具体困难和本轮投入，区分必要项与可选项，再完成已授权的修改并检查现有安装入口。最后给我交付证据，以及和本次取舍相关的原文章节入口。
+
+这是可复制的调用示例。另已完成范围收窄、临近截止的质量问题、需求不清三个独立模拟场景，见[原始产物与判定](../evals/book-skills-2026-09-18/REPORT.md)。状态为 simulated，不代表真实项目效果。
 
 ## 为什么这次选它
 

@@ -1,0 +1,13 @@
+test_empty_and_out_of_range_then_tail (test_listing.PageTests) ... ok
+test_first_call_defaults (test_listing.PageTests) ... ok
+test_return_container_is_independent (test_listing.PageTests) ... ok
+test_same_key_changed_limit (test_listing.PageTests) ... ok
+test_same_key_mutated_rows (test_listing.PageTests) ... ok
+test_same_key_next_page (test_listing.PageTests) ... ok
+test_same_key_replaced_rows (test_listing.PageTests) ... ok
+test_tuple_input_returns_list (test_listing.PageTests) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.001s
+
+OK

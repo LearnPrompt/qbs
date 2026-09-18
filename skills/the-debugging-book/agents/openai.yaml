@@ -1,0 +1,4 @@
+interface:
+  display_name: "The Debugging Book · 科学调试"
+  short_description: "把反复试改变成可复现的实验、因果诊断、聚焦修复和回归记录"
+  default_prompt: "使用 $the-debugging-book 处理这个反复出现的 bug：先复现并用实验区分原因，再完成有证据的修复和回归，最后留下本次方法的阅读入口。"

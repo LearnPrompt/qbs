@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shape Up · 需求设限与收尾"
+  short_description: "从具体困难确定本轮边界，保留必要质量，并用实际交付证据判断何时结束"
+  default_prompt: "使用 $shape-up，帮我处理这个越做越大的开发需求：明确本轮边界、必要项和验收，然后完成已授权的工作，并留一个相关原文章节入口。"

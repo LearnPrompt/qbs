@@ -32,18 +32,9 @@
 
 ## 从问题到自己的 Skill
 
-```mermaid
-flowchart TD
-    A["你提出一个问题<br/>想完成什么 · 现在卡在哪里"] --> B["QBS 找书、选章节<br/>核对这本书为什么适合当前问题"]
-    B --> C{"取得了完整的<br/>相关正文章节吗？"}
-    C -- "没有" --> D["继续找可用正文<br/>仍有缺口就说明缺哪章、需要什么材料"]
-    D -- "补齐材料" --> C
-    C -- "有" --> E["AI 完整读相关章节<br/>记录方法、条件、例外和出处"]
-    E --> F["制作你的 Skill<br/>输入 → 判断步骤 → 产物 → 验收"]
-    F --> G["换一个任务试跑<br/>检查方法是否用对、结果是否有用"]
-    G -- "未通过，修订或补读" --> E
-    G -- "通过" --> H["交付 Skill、试跑产物和阅读入口<br/>以后遇到同类问题，直接调用它"]
-```
+![QBS：问题、找书、读章节、制作 Skill、试跑和交付](assets/qbs-flow.zh-CN.png)
+
+[流程图源文件](assets/qbs-flow.zh-CN.mmd)
 
 这条流程的完整说明在 [QBS Skill](skills/qbs/SKILL.md)。拿不到正文时会报告具体缺口；找到书名、读过序言都不能算完成了相关章节阅读。
 
@@ -111,13 +102,37 @@ npx skills@latest add LearnPrompt/qbs --skill qbs -a codex claude-code -y
 
 ## 我们用这条路线在做什么
 
-排期是探索 QBS 时做的第一个案例。后面又从 Codex 里常见的两个问题出发选了书。它们展示不同阶段的产物，也暴露了流程还需要补齐的地方。
+从 Codex 里常见的两个问题出发，我们完整读了相关章节，做成下面两个可独立安装的 Skill。排期保留为早期草案。QBS 是制作这些 Skill 的方法，遇到新领域时仍从 QBS 开始。
 
-| 问题 | 选书 | 当前进展 |
-|---|---|---|
-| 活交给同事，怎样分工、排期和验收？ | [High Output Management](books/high-output-management.md) | 已有可安装草案；只完整读了公开新版序言，相关正文待补，尚未满足现行 QBS 的章节要求 |
-| 一个小功能，怎样避免越做越大？ | [Shape Up](books/shape-up.md) | 完整读第 3、14 章；尚未打包成子 Skill |
-| bug 改了几轮，怎样停止猜测？ | [The Debugging Book](books/the-debugging-book.md) | 完整读 Introduction to Debugging，含练习答案；尚未打包成子 Skill |
+<table>
+<tr>
+<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — 官方纸本封面"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>控制小功能的范围<br><sub>官方纸本封面</sub></td>
+<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — 官网展示图 · 在线教材"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>让调试停止猜测<br><sub>官网展示图 · 在线教材</sub></td>
+<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — 官方封面 · 早期草案"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>分工、排期与验收<br><sub>官方封面 · 早期草案</sub></td>
+</tr>
+</table>
+
+| Skill | 已读内容与验证 |
+|---|---|
+| `shape-up` | 完整读第 3、14 章；新任务试跑覆盖范围收窄、临近截止的质量问题、需求不清三个场景 |
+| `the-debugging-book` | 完整读 Introduction to Debugging，含练习答案；试跑包含实际代码修复与缺乏证据的场景 |
+| `high-output-management` | 已有可安装草案；只完整读公开新版序言，相关正文待补，尚未满足现行 QBS 的章节要求 |
+
+[查看两本书的试跑输入、原始输出和逐项判定](evals/book-skills-2026-09-18/REPORT.md)。这是模拟任务验证，尚无真实团队效果或优于普通对话的结论。
+
+### 直接试用已经做好的 Skill
+
+只需要其中一本时，保留对应名称即可。
+
+```bash
+npx skills@latest add LearnPrompt/qbs --skill shape-up the-debugging-book
+```
+
+```text
+使用 $shape-up。我想给客户列表加一个“导出当前筛选结果”的功能，只愿投入两个半天。请确定本轮必要范围、暂缓项、未知条件和验收标准。
+
+使用 $the-debugging-book。这段代码第一次分页正常，后面换页却重复旧结果。请复现、用实验区分原因，完成修复和回归，并告诉我关键判断来自书中哪里。
+```
 
 <a id="scheduling-flow"></a>
 

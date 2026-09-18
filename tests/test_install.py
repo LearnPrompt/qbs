@@ -20,17 +20,22 @@ class InstallTests(unittest.TestCase):
         report = installer.install(REPO, self.dest, dry_run=True)
         self.assertTrue(report["dry_run"])
         self.assertFalse(self.dest.exists())
-        self.assertEqual({s["name"] for s in report["skills"]}, {"qbs", "high-output-management"})
+        self.assertEqual({s["name"] for s in report["skills"]}, {"qbs", "high-output-management", "shape-up", "the-debugging-book"})
 
-    def test_both_packages_read_back_identically(self):
+    def test_all_packages_read_back_identically(self):
         installer.install(REPO, self.dest)
         for name, source in installer.skill_directories(REPO).items():
             self.assertEqual(installer.hashes(source), installer.hashes(self.dest / name))
 
     def test_child_can_install_alone(self):
-        installer.install(REPO, self.dest, ["high-output-management"])
-        self.assertFalse((self.dest / "qbs").exists())
-        self.assertTrue((self.dest / "high-output-management/references/source-notes.md").is_file())
+        for name in ("high-output-management", "shape-up", "the-debugging-book"):
+            with self.subTest(skill=name):
+                dest = self.dest / name
+                installer.install(REPO, dest, [name])
+                self.assertEqual({p.name for p in dest.iterdir()}, {name})
+                self.assertEqual(installer.hashes(REPO / "skills" / name),
+                                 installer.hashes(dest / name))
+                self.assertTrue((dest / name / "references/source-notes.md").is_file())
 
     def test_parent_can_install_alone(self):
         installer.install(REPO, self.dest, ["qbs"])

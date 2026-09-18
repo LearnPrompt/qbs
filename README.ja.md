@@ -32,18 +32,9 @@
 
 ## 自分の問いから、自分の Skill へ
 
-```mermaid
-flowchart TD
-    A["あなたが問題を伝える<br/>何を達成したいか · どこで困っているか"] --> B["QBS が本と章を選ぶ<br/>その本が今回の問題に適しているか確認"]
-    B --> C{"関連する本文の章を<br/>完全な形で入手できたか？"}
-    C -- "できていない" --> D["利用できる本文を探し続ける<br/>不足が残れば、足りない章と必要な資料を示す"]
-    D -- "資料を補う" --> C
-    C -- "できた" --> E["AI が関連する章を最後まで読む<br/>方法・条件・例外・出典を記録"]
-    E --> F["あなたの Skill を作る<br/>入力 → 判断の手順 → 成果物 → 完了確認"]
-    F --> G["別のタスクで試す<br/>方法を正しく使えたか、結果が役立つかを確認"]
-    G -- "不合格なら修正、または読み足す" --> E
-    G -- "合格" --> H["Skill・試行の成果物・読書の入口を渡す<br/>次に同じ種類の問題が起きたら、そのまま呼び出す"]
-```
+![QBS：問題、本、章の通読、Skill 作成、試行、成果物](assets/qbs-flow.ja.png)
+
+[図のソース](assets/qbs-flow.ja.mmd)
 
 詳しい手順は [QBS Skill](skills/qbs/SKILL.md) にあります。本文を入手できなければ、何が不足しているかを報告します。本の名前を見つけたり、序文を読んだりしただけでは、関連する章を読了したことにはなりません。
 
@@ -111,13 +102,37 @@ $qbs を使ってください。[分野]には詳しくありませんが、今�
 
 ## この流れで、私たちは何を作っているか
 
-スケジュール管理は、QBS を模索する中で作った最初の事例です。その後、Codex でよく出会う別の2つの問題から、本を選びました。それぞれが異なる段階の成果物を示すとともに、まだ補う必要のある工程も明らかにしています。
+Codex でよく出会う2つの問題から始め、関連する章を最後まで読み、単独でインストールできる Skill にしました。スケジュール管理は初期の草案として残しています。QBS はこれらの Skill を作る方法です。新しい分野では、また QBS から始めます。
 
-| 問題 | 選んだ本 | 現在の進捗 |
-|---|---|---|
-| 同僚に仕事を任せるとき、分担・日程・完了確認をどう決めるか？ | [High Output Management](books/high-output-management.md) | インストール可能な草案あり。最後まで読んだのは公開されている新版の序文のみ。関連する本文は未読で、現行 QBS の章の読書要件をまだ満たしていない |
-| 小さな機能が、際限なく大きくなるのをどう防ぐか？ | [Shape Up](books/shape-up.md) | 第3章と第14章を最後まで読了。子 Skill としては未パッケージ化 |
-| バグを何度も修正しているとき、当てずっぽうをどう止めるか？ | [The Debugging Book](books/the-debugging-book.md) | Introduction to Debugging を演習の解答まで読了。子 Skill としては未パッケージ化 |
+<table>
+<tr>
+<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — 公式の紙版表紙"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>小さな機能の範囲を決める<br><sub>公式の紙版表紙</sub></td>
+<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — 公式サイトの紹介画像 · オンライン教材"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>当てずっぽうの修正を止める<br><sub>公式サイトの紹介画像 · オンライン教材</sub></td>
+<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — 公式表紙 · 初期草案"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>分担・日程・完了確認<br><sub>公式表紙 · 初期草案</sub></td>
+</tr>
+</table>
+
+| Skill | 読了範囲と検証 |
+|---|---|
+| `shape-up` | 第3章と第14章を読了。範囲の絞り込み、締切直前の品質問題、曖昧な要望の3場面で試行 |
+| `the-debugging-book` | Introduction to Debugging を演習解答まで読了。実コードの修正と、証拠が不足する場面で試行 |
+| `high-output-management` | インストール可能な草案。公開された新版序文のみ読了。関連する本文は不足しており、現行 QBS の読書要件は未達 |
+
+[試行の入力・実際の出力・項目別判定](evals/book-skills-2026-09-18/REPORT.md)。シミュレーションであり、実チームでの効果や通常の対話より優れていることは示していません。
+
+### 作成済みの Skill を直接試す
+
+1つだけインストールする場合は、その名前だけ残してください。
+
+```bash
+npx skills@latest add LearnPrompt/qbs --skill shape-up the-debugging-book
+```
+
+```text
+$shape-up を使ってください。顧客一覧に「現在の絞り込み結果をエクスポート」を追加したいです。投入上限は半日を2回分。必須範囲、後回しにする項目、未知の条件、完了確認を決めてください。
+
+$the-debugging-book を使ってください。最初のページ取得は正常ですが、ページを変えても古い結果が返ります。再現し、実験で原因を区別して修正と回帰確認を行い、重要な判断の出典も教えてください。
+```
 
 <a id="scheduling-flow"></a>
 

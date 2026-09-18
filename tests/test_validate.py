@@ -15,7 +15,7 @@ class PackagingTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.repo = Path(self.temp.name)
-        for name in ("skills", "books"):
+        for name in ("skills", "books", "evals"):
             shutil.copytree(REPO / name, self.repo / name)
 
     def test_current_packages_are_valid(self):

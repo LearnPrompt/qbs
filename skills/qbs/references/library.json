@@ -16,6 +16,36 @@
       "cover_url": "https://images4.penguinrandomhouse.com/cover/9780679762881",
       "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/high-output-management.md",
       "status": "draft"
+    },
+    {
+      "id": "shape-up",
+      "title": "Shape Up",
+      "author": "Ryan Singer",
+      "isbn": null,
+      "skill": "shape-up",
+      "skill_path": "skills/shape-up",
+      "book_path": "books/shape-up.md",
+      "scope": "控制功能范围、设定投入上限、判断交付与延期",
+      "reading_scope": "完整读第 3 章 Set Boundaries 和第 14 章 Decide When to Stop 的正文及图示；其余章未纳入方法依据",
+      "source_url": "https://basecamp.com/shapeup/1.2-chapter-03",
+      "cover_url": "https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899",
+      "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/shape-up.md",
+      "status": "simulated"
+    },
+    {
+      "id": "the-debugging-book",
+      "title": "The Debugging Book",
+      "author": "Andreas Zeller",
+      "isbn": null,
+      "skill": "the-debugging-book",
+      "skill_path": "skills/the-debugging-book",
+      "book_path": "books/the-debugging-book.md",
+      "scope": "用可复现实验区分调试假设、诊断、修复与回归",
+      "reading_scope": "完整读 Introduction to Debugging 官方 Notebook 全部 217 个 cell，含练习答案；未读后续章",
+      "source_url": "https://www.debuggingbook.org/html/Intro_Debugging.html",
+      "cover_url": "https://www.debuggingbook.org/html/PICS/wordcloud.png",
+      "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/the-debugging-book.md",
+      "status": "simulated"
     }
   ]
 }

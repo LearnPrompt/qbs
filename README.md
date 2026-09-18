@@ -5,7 +5,6 @@
 > *「先让一本书帮上今天的忙，再想回去读它。」*
 
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-QBS-blueviolet)](skills/qbs/SKILL.md)
-[![skills.sh](https://skills.sh/b/LearnPrompt/qbs)](https://skills.sh/LearnPrompt/qbs)
 [![Package checks](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml/badge.svg)](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 

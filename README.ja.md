@@ -5,7 +5,6 @@
 > *「まず、今日の困りごとを本に助けてもらう。そこから、続きを読みたくなる。」*
 
 [![Agent Skills](https://img.shields.io/badge/Agent%20Skills-QBS-blueviolet)](skills/qbs/SKILL.md)
-[![skills.sh](https://skills.sh/b/LearnPrompt/qbs)](https://skills.sh/LearnPrompt/qbs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Package checks](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml/badge.svg)](https://github.com/LearnPrompt/qbs/actions/workflows/check.yml)
 

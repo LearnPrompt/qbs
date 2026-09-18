@@ -1,0 +1,51 @@
+{
+  "unit": "half-hour since midnight",
+  "original_valid_schedules_by_review_order": {
+    "[28, 29]": 0,
+    "[29, 28]": 0
+  },
+  "adjusted_A_review14_B_review15_A_publish1530_B_publish16": 6,
+  "adjusted_example": [
+    [
+      20,
+      0
+    ],
+    [
+      21,
+      0
+    ],
+    [
+      22,
+      0
+    ],
+    [
+      23,
+      0
+    ],
+    [
+      26,
+      1
+    ],
+    [
+      27,
+      1
+    ],
+    [
+      28,
+      1
+    ],
+    [
+      29,
+      1
+    ],
+    [
+      30,
+      2
+    ],
+    [
+      31,
+      3
+    ]
+  ],
+  "scope": "Enumerates all 30-minute editor slots; edits may pause, no added people or shorter durations. Does not establish conclusions for finer arbitrary durations."
+}

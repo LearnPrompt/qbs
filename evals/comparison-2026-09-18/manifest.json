@@ -1,0 +1,25 @@
+{
+  "tested_skill_commit": "28ce026d9f452e74e3e82520231481cb62b19f17",
+  "source_url": "https://penguinrandomhousehighereducation.com/book/?isbn=9780679762881#excerpt",
+  "source_scope": "Ben Horowitz, Foreword to the Vintage Books Edition, 2015; not the full book",
+  "source_text_sha256": "1ea892225d40d9f6f3587e24e6a1b5814910d6fdc406cce2f236e01286868e09",
+  "execution": "Three fresh agents with fork_turns=none; same inherited model settings; one run per condition; identical generic second-turn follow-up. Exact model identifier and sampling parameters not exposed or recorded. No browsing or outside sources permitted.",
+  "skill_files": {
+    "skills/high-output-management/SKILL.md": "0a3c9f4b4636df7baa0b2b1088e64a177ce25994af050dd499ba8bd6d29c1b2e",
+    "skills/high-output-management/references/templates.md": "6708a8376ca3611c15123f1a825448ebb2e3d27d7f968b56f910a03489c3c1bb",
+    "skills/high-output-management/references/source-notes.md": "3f70a73f7c7a460328dbe0e41ac7ba017d422220d441b44fb6807ea5814ee8e2"
+  },
+  "frozen_prompt_and_protocol": {
+    "prompt.txt": "de701b31a8b5ed1dbac1dc42d6544736bb12eb69731a1dea906b490b7894c035",
+    "followup.txt": "f81f5d86c4e1270917d94a07bf9da22c9e58049572c56ad2b1ae6ee380fcc48f",
+    "protocol.md": "414d0a7549420108fa9ee5b5f5191196532a74c8363925355c1c63d6446c2ff5"
+  },
+  "responses": {
+    "source-round2.md": "ab659d670862a64ed4294b8f2f47e3c8db329c29b2981ef9c69edbd220912b01",
+    "plain-round1.md": "43a2014b97df6e94caf0bf10903bff38383c7bcb0c2564cecabf70b2f0b9e877",
+    "skill-round1.md": "f5af993cff6a6fd48d68891cd9d6ba51498c377474cb55c8b9cafca5d36c10c4",
+    "skill-round2.md": "897b65693058153d5557f63fc7b5db059f06fd39ab7aa9e8bc1d9c5debfe0607",
+    "plain-round2.md": "a84717b65cc12b2d430bcf2a18cca151dff50807e16e5fcea898bfd02ee8aa4d",
+    "source-round1.md": "d8379e6c2eec6b2048d7fdfa3cfe2e81087243395c137d511d7d4277041cdad1"
+  }
+}

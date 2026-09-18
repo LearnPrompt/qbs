@@ -1,4 +1,0 @@
-interface:
-  display_name: "内容团队委派与排期 · 草案"
-  short_description: "把交接变成任务卡，核对共享人员的排期冲突，并按约定和实际记录分别验收"
-  default_prompt: "使用 $high-output-management，处理我提供的这项交接、排期或验收问题，直接给出可用产物，并标明会影响结论的缺失信息。"

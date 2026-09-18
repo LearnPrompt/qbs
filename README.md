@@ -102,13 +102,12 @@ npx skills@latest add LearnPrompt/qbs --skill qbs -a codex claude-code -y
 
 ## 我们用这条路线在做什么
 
-从 Codex 里常见的两个问题出发，我们完整读了相关章节，做成下面两个可独立安装的 Skill。排期保留为早期草案。QBS 是制作这些 Skill 的方法，遇到新领域时仍从 QBS 开始。
+从 Codex 里常见的两个问题出发，我们完整读了相关章节，做成下面两个可独立安装的 Skill。QBS 是制作这些 Skill 的方法，遇到新领域时仍从 QBS 开始。
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — 官方纸本封面"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>控制小功能的范围<br><sub>官方纸本封面</sub></td>
-<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — 官网展示图 · 在线教材"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>让调试停止猜测<br><sub>官网展示图 · 在线教材</sub></td>
-<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — 官方封面 · 早期草案"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>分工、排期与验收<br><sub>官方封面 · 早期草案</sub></td>
+<td align=”center” width=”50%”><a href=”books/shape-up.md”><img src=”https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899” width=”180” alt=”Shape Up — 官方纸本封面”></a><br><a href=”books/shape-up.md”><strong>Shape Up</strong></a><br>控制小功能的范围<br><sub>官方纸本封面</sub></td>
+<td align=”center” width=”50%”><a href=”books/the-debugging-book.md”><img src=”https://www.debuggingbook.org/html/PICS/wordcloud.png” width=”180” alt=”The Debugging Book — 官网展示图 · 在线教材”></a><br><a href=”books/the-debugging-book.md”><strong>The Debugging Book</strong></a><br>让调试停止猜测<br><sub>官网展示图 · 在线教材</sub></td>
 </tr>
 </table>
 
@@ -116,7 +115,6 @@ npx skills@latest add LearnPrompt/qbs --skill qbs -a codex claude-code -y
 |---|---|
 | `shape-up` | 完整读第 3、14 章；新任务试跑覆盖范围收窄、临近截止的质量问题、需求不清三个场景 |
 | `the-debugging-book` | 完整读 Introduction to Debugging，含练习答案；试跑包含实际代码修复与缺乏证据的场景 |
-| `high-output-management` | 已有可安装草案；只完整读公开新版序言，相关正文待补，尚未满足现行 QBS 的章节要求 |
 
 [查看两本书的试跑输入、原始输出和逐项判定](evals/book-skills-2026-09-18/REPORT.md)。这是模拟任务验证，尚无真实团队效果或优于普通对话的结论。
 
@@ -129,33 +127,10 @@ npx skills@latest add LearnPrompt/qbs --skill shape-up the-debugging-book
 ```
 
 ```text
-使用 $shape-up。我想给客户列表加一个“导出当前筛选结果”的功能，只愿投入两个半天。请确定本轮必要范围、暂缓项、未知条件和验收标准。
+使用 $shape-up。我想给客户列表加一个”导出当前筛选结果”的功能，只愿投入两个半天。请确定本轮必要范围、暂缓项、未知条件和验收标准。
 
 使用 $the-debugging-book。这段代码第一次分页正常，后面换页却重复旧结果。请复现、用实验区分原因，完成修复和回归，并告诉我关键判断来自书中哪里。
 ```
-
-<a id="scheduling-flow"></a>
-
-<details>
-<summary>展开第一个产物示例：排期 Skill 草案</summary>
-
-两条视频各需剪辑 3 小时，唯一剪辑员只有 5 小时可用。这个草案的模拟产物识别出排不下，并要求重新核对审核、返工和发布的时间。排期和验收的两张流程图放在[案例详情](docs/scheduling-example.md)，它们是这个子 Skill 的业务流程。
-
-[模拟输入与实际输出](evals/RESULTS.md) · [草案入口](skills/high-output-management/SKILL.md)
-
-如果你恰好要试这个草案，可以另行安装：
-
-```bash
-npx skills@latest add LearnPrompt/qbs --skill high-output-management
-```
-
-```text
-使用 $high-output-management。两条视频都在 13:00 交稿，各需剪辑 3 小时；唯一剪辑员 13:00–18:00 可用，两条都希望 18:00 发布。先判断排不排得下，再告诉我需要拍板什么，不要假设有人加班。
-```
-
-这些是场景设计与模拟。此前的[三组对照](evals/comparison-2026-09-18/REPORT.md)中，普通对话也给出了正确的核心判断，没有证明这个草案优于直接对话。
-
-</details>
 
 <details>
 <summary>维护者验证命令</summary>

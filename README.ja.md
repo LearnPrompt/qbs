@@ -102,13 +102,12 @@ $qbs を使ってください。[分野]には詳しくありませんが、今�
 
 ## この流れで、私たちは何を作っているか
 
-Codex でよく出会う2つの問題から始め、関連する章を最後まで読み、単独でインストールできる Skill にしました。スケジュール管理は初期の草案として残しています。QBS はこれらの Skill を作る方法です。新しい分野では、また QBS から始めます。
+Codex でよく出会う2つの問題から始め、関連する章を最後まで読み、単独でインストールできる Skill にしました。QBS はこれらの Skill を作る方法です。新しい分野では、また QBS から始めます。
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — 公式の紙版表紙"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>小さな機能の範囲を決める<br><sub>公式の紙版表紙</sub></td>
-<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — 公式サイトの紹介画像 · オンライン教材"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>当てずっぽうの修正を止める<br><sub>公式サイトの紹介画像 · オンライン教材</sub></td>
-<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — 公式表紙 · 初期草案"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>分担・日程・完了確認<br><sub>公式表紙 · 初期草案</sub></td>
+<td align="center" width="50%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — 公式の紙版表紙"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>小さな機能の範囲を決める<br><sub>公式の紙版表紙</sub></td>
+<td align="center" width="50%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — 公式サイトの紹介画像 · オンライン教材"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>当てずっぽうの修正を止める<br><sub>公式サイトの紹介画像 · オンライン教材</sub></td>
 </tr>
 </table>
 
@@ -116,7 +115,6 @@ Codex でよく出会う2つの問題から始め、関連する章を最後ま�
 |---|---|
 | `shape-up` | 第3章と第14章を読了。範囲の絞り込み、締切直前の品質問題、曖昧な要望の3場面で試行 |
 | `the-debugging-book` | Introduction to Debugging を演習解答まで読了。実コードの修正と、証拠が不足する場面で試行 |
-| `high-output-management` | インストール可能な草案。公開された新版序文のみ読了。関連する本文は不足しており、現行 QBS の読書要件は未達 |
 
 [試行の入力・実際の出力・項目別判定](evals/book-skills-2026-09-18/REPORT.md)。シミュレーションであり、実チームでの効果や通常の対話より優れていることは示していません。
 
@@ -133,29 +131,6 @@ $shape-up を使ってください。顧客一覧に「現在の絞り込み結�
 
 $the-debugging-book を使ってください。最初のページ取得は正常ですが、ページを変えても古い結果が返ります。再現し、実験で原因を区別して修正と回帰確認を行い、重要な判断の出典も教えてください。
 ```
-
-<a id="scheduling-flow"></a>
-
-<details>
-<summary>最初の成果物の例を開く：スケジュール管理 Skill の草案</summary>
-
-動画2本の編集にそれぞれ3時間かかるのに、編集担当者は1人で、空き時間は5時間だけ。この草案のシミュレーション出力は、予定が成立しないと判断し、レビュー・修正・公開までの時間を改めて確認するよう求めました。スケジュールと完了確認の2つの図は、[事例の詳細](docs/scheduling-example.ja.md)にあります。これらは、この子 Skill の業務フローです。
-
-[シミュレーションの入力と実際の出力](evals/RESULTS.md) · [草案を開く](skills/high-output-management/SKILL.md)
-
-この草案を試したい場合は、別途インストールできます。
-
-```bash
-npx skills@latest add LearnPrompt/qbs --skill high-output-management
-```
-
-```text
-$high-output-management を使ってください。動画2本とも原稿提出が 13:00、編集は各3時間です。編集担当者は1人で、作業できるのは 13:00–18:00。2本とも 18:00 公開を希望しています。まず予定が成立するかを判断し、次に何を決める必要があるかを教えてください。残業できるとは仮定しないでください。
-```
-
-これらは場面を設計して行ったシミュレーションです。以前の[3組の比較](evals/comparison-2026-09-18/REPORT.md)では、通常の対話でも中心となる判断は正しくできていました。この草案が通常の対話より優れていることは示せていません。
-
-</details>
 
 <details>
 <summary>メンテナー向けの検証コマンド</summary>

@@ -11,7 +11,7 @@ Jake Knapp & John Zeratsky,《Make Time: How to Focus on What Matters Every Day�
 
 本 Skill 的规则来自 Highlight 章及 Laser 章中与注意力保护直接相关的战术。把书中面向个人日常的方法迁移到 AI Agent 协作场景，是本项目自己的设计，不是原书内容。
 
-详细阅读记录见 `references/source-notes.md`。
+详细阅读记录见 [references/source-notes.md](references/source-notes.md)。
 
 ## 什么时候用
 

@@ -102,13 +102,12 @@ When a similar problem comes up, invoke the Skill you've made. For a new field, 
 
 ## What we're making through this process
 
-We started with two recurring Codex problems, read the relevant chapters in full, and built two independently installable Skills. The scheduling example remains an early draft. QBS is the method used to make these Skills; for a new field, start with QBS again.
+We started with two recurring Codex problems, read the relevant chapters in full, and built two independently installable Skills. QBS is the method used to make these Skills; for a new field, start with QBS again.
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — Official print cover"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>Keep a small feature in scope<br><sub>Official print cover</sub></td>
-<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — Official website preview · online textbook"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>Stop guessing while debugging<br><sub>Official website preview · online textbook</sub></td>
-<td align="center" width="33%"><a href="books/high-output-management.md"><img src="https://images4.penguinrandomhouse.com/cover/9780679762881" width="180" alt="High Output Management — Official cover · early draft"></a><br><a href="books/high-output-management.md"><strong>High Output Management</strong></a><br>Delegate, schedule, and verify<br><sub>Official cover · early draft</sub></td>
+<td align="center" width="50%"><a href="books/shape-up.md"><img src="https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899" width="180" alt="Shape Up — Official print cover"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>Keep a small feature in scope<br><sub>Official print cover</sub></td>
+<td align="center" width="50%"><a href="books/the-debugging-book.md"><img src="https://www.debuggingbook.org/html/PICS/wordcloud.png" width="180" alt="The Debugging Book — Official website preview · online textbook"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>Stop guessing while debugging<br><sub>Official website preview · online textbook</sub></td>
 </tr>
 </table>
 
@@ -116,7 +115,6 @@ We started with two recurring Codex problems, read the relevant chapters in full
 |---|---|
 | `shape-up` | Chapters 3 and 14 read in full; new-task trials cover scope, quality issues near a deadline, and unclear requirements |
 | `the-debugging-book` | Introduction to Debugging read in full, including solutions; trials include an actual code repair and an evidence-limited scenario |
-| `high-output-management` | Installable draft; only the public newer-edition foreword read in full. Relevant main-text chapters are still missing, so it does not meet the current QBS reading requirement |
 
 [Trial inputs, raw outputs, and item-by-item review](evals/book-skills-2026-09-18/REPORT.md). These are simulated tasks, not evidence of real-team effectiveness or superiority over ordinary conversation.
 
@@ -133,29 +131,6 @@ Use $shape-up. I want to export the current filtered customer list, with an appe
 
 Use $the-debugging-book. Pagination works on the first call, but changing pages repeats old results. Reproduce it, distinguish causes through experiments, fix it, and run regression checks. Point me to the chapter behind the key judgment.
 ```
-
-<a id="scheduling-flow"></a>
-
-<details>
-<summary>Expand the first output example: a scheduling Skill draft</summary>
-
-Two videos each need 3 hours of editing, but the only editor has just 5 hours available. The draft's simulated output identified that the work wouldn't fit and required checking review, revision, and publication time again. The two scheduling and acceptance flowcharts are in the [case details](docs/scheduling-example.en.md); they describe this child Skill's business workflow.
-
-[Simulation inputs and actual outputs](evals/RESULTS.md) · [Draft entry point](skills/high-output-management/SKILL.md)
-
-If you happen to want to try this draft, install it separately:
-
-```bash
-npx skills@latest add LearnPrompt/qbs --skill high-output-management
-```
-
-```text
-Use $high-output-management. Both video drafts arrive at 13:00, and each needs 3 hours of editing. The only editor is available from 13:00 to 18:00, and both videos are intended for publication at 18:00. First determine whether the work fits, then tell me what decisions I need to make. Don't assume anyone will work overtime.
-```
-
-These are scenario designs and simulations. In the earlier [three-way comparison](evals/comparison-2026-09-18/REPORT.md), ordinary conversation also reached the correct core conclusions. It did not establish that this draft performs better than direct conversation.
-
-</details>
 
 <details>
 <summary>Validation commands for maintainers</summary>

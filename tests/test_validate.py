@@ -22,7 +22,7 @@ class PackagingTests(unittest.TestCase):
         self.assertEqual(validate(self.repo), [])
 
     def test_missing_source_reference_is_rejected(self):
-        (self.repo / "skills/high-output-management/references/source-notes.md").unlink()
+        (self.repo / "skills/make-time/references/source-notes.md").unlink()
         self.assertTrue(any("Broken skill reference" in s for s in validate(self.repo)))
 
     def test_unclosed_frontmatter_is_rejected(self):
@@ -40,13 +40,13 @@ class PackagingTests(unittest.TestCase):
         self.assertTrue(any("Missing description" in s for s in validate(self.repo)))
 
     def test_parent_dependency_in_child_is_rejected(self):
-        entry = self.repo / "skills/high-output-management/SKILL.md"
+        entry = self.repo / "skills/make-time/SKILL.md"
         with entry.open("a") as f:
             f.write("\n[required parent](../qbs/SKILL.md)\n")
         self.assertTrue(any("outside standalone" in s for s in validate(self.repo)))
 
     def test_cover_removal_is_rejected(self):
-        page = self.repo / "books/high-output-management.md"
+        page = self.repo / "books/make-time.md"
         page.write_text("# A book page with no cover")
         self.assertTrue(any("display registered cover" in s for s in validate(self.repo)))
 

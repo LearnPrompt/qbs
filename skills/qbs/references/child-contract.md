@@ -34,7 +34,7 @@ evals/                              新案例、评分标准与实际结果
 ## 最小交付
 
 - `SKILL.md` 有 name、description、任务入口、判断步骤与可观察验收。目录名与 name 一致。
-- `references/source-notes.md` 有书目/作者、来源链接、阅读日期、已读/未读边界、规则映射；不复制大段原文。
+- `references/source-notes.md` 保留实际选书理由、正文入口、已读章节和起止位置、阅读日期、完整性及未读范围，并将具体方法映射到原文位置。记录格式见父 Skill 的阅读步骤；不把目录当阅读记录，不复制大段原文。
 - 按任务需要添加模板或脚本；不默认每本书必须有脚本。
 - `agents/openai.yaml` 的 default_prompt 显式提到 `$<skill-name>`。
 - `books/<book-id>.md` 显示官方封面、封面来源、作者、版本、阅读范围、用途和可复制调用语。封面与书的版权不随项目 MIT 授权。
@@ -44,4 +44,4 @@ evals/                              新案例、评分标准与实际结果
 
 `skills/qbs/references/library.json` 为唯一书籍索引，字段包含 `id`、`title`、`author`、`isbn`、`skill`、`skill_path`、`book_path`、`scope`、`reading_scope`、`source_url`、`cover_url`、`book_url`、`status`。
 
-`status` 只用 `draft`、`simulated`、`field-tested`。完整书籍卡和一次通过的行为试跑可标 simulated；field-tested 需要真实使用记录以及能核验的适用范围。模板完整、文件格式通过不提升状态。故障修复应保留变更和复测证据。
+`status` 只用 `draft`、`simulated`、`field-tested`。至少完整读一个相关正文章节、规则有对应阅读依据、书籍卡完整且通过一次行为试跑，才可标 simulated；涉及其他章节的方法仍须补足对应正文。field-tested 还需要真实使用记录以及能核验的适用范围。模板完整、文件格式通过不提升状态。故障修复应保留变更和复测证据。

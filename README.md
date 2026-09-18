@@ -1,18 +1,26 @@
 # QBS · 把书里的方法，变成能用的 Skill
 
-从《High Output Management》开始，先解决一件事：**把内容团队的排期交出去，并且知道怎么验收。**
+> *「没读过这个领域的书，也能让 AI 先找书、读正文，再把方法做成 Skill。」*
 
-[![High Output Management 封面](https://images4.penguinrandomhouse.com/cover/9780679762881)](books/high-output-management.md)
+[![Agent Skills](https://img.shields.io/badge/Agent%20Skills-QBS-blueviolet)](skills/qbs/SKILL.md)
+[![skills.sh](https://skills.sh/b/LearnPrompt/qbs)](https://skills.sh/LearnPrompt/qbs)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Andrew S. Grove 著 · [书籍说明与阅读范围](books/high-output-management.md) · 封面由 Penguin Random House 提供，版权归原权利人。
+**从你遇到的问题出发，交付有出处的 Skill，以及能检查的任务结果。**
+
+[看排活流程](#负责人照这张图排活) · [一行安装](#安装) · [怎么使用](#马上使用) · [书籍与技能](#书籍与技能) · [实际验证](#验证)
+
+---
+
+## 它解决什么问题
+
+想把内容团队的排期交出去，却不知道该怎么交接、怎样验收？QBS 从这样的实际问题出发，让 AI 找书并读相关正文，再把方法变成能反复用的流程。
 
 你还没系统读过这个领域的书，也可以从一个真实问题开始：找可靠资料，把方法写成可重复执行的步骤，再拿新问题检验。**QBS 不要求你先成为专家，但要求方法有来源、结论有边界、结果能检查。**
 
 `实际问题 → AI主动找书 → 定位章节并取得正文 → 完整读相关章 → 提炼方法 → 生成 Skill → 用任务检验`
 
 找书和读书由执行 QBS 的 AI 完成，不要求用户先熟悉领域。它会实际核对候选书、访问正文并留下阅读记录；选书推荐、找到文件和读完章节分别报告。[查看完整找书与阅读流程](skills/qbs/SKILL.md)。
-
-[马上使用](#马上使用) · [书籍与技能](#书籍与技能) · [安装](#安装) · [验证](#验证) · [添加一本书](#添加一本书)
 
 ## 马上使用
 
@@ -27,6 +35,10 @@ Andrew S. Grove 著 · [书籍说明与阅读范围](books/high-output-managemen
 仅有书名时先找材料；已有指定书时直接围绕该书。不会把推荐一本书等同于已经读过，也不把一次聊天中的猜测变成通用规则。
 
 ## 书籍与技能
+
+[![High Output Management 封面](https://images4.penguinrandomhouse.com/cover/9780679762881)](books/high-output-management.md)
+
+Andrew S. Grove 著 · [书籍说明与阅读范围](books/high-output-management.md) · 封面由 Penguin Random House 提供，版权归原权利人。
 
 | 入口 | 负责什么 | 当前证据 |
 |---|---|---|
@@ -90,37 +102,56 @@ flowchart TD
 
 ## 安装
 
-安装脚本面向 macOS / Linux，需要 Python 3.9+ 和 Git；只复制本地文件，不请求网络、不执行 Skill 内指令。先克隆本项目：
+已安装 Node.js、npm（含 `npx`）和 Git 的电脑，直接运行：
 
 ```bash
-git clone https://github.com/LearnPrompt/qbs.git
-cd qbs
+npx skills@latest add LearnPrompt/qbs
 ```
 
-Codex，安装父 Skill 与当前全部书籍子 Skill：
+交互安装时，选择 `qbs`、`high-output-management` 和你使用的 Agent；在 Agent 内执行时，安装器可能自动选择当前 Agent。默认装到当前项目；想在所有项目里使用，在命令末尾加 `-g`。不需要手动克隆仓库，也不需要 Python。[安装器与参数说明](https://github.com/vercel-labs/skills#install-a-skill)。
+
+**装完第一句话，复制给 Agent：**
+
+```text
+使用 $qbs。我想把内容团队的排期交给运营，但不知道该怎样交接和验收。请找一本相关的书，取得并完整阅读相关正文章节，把有出处的方法做成 Skill，再给我一份实际的任务卡、排期与验收结果。拿不到正文就说明缺哪几章，不要只凭序言生成。
+```
+
+只想试用现有排期草案，可以说：
+
+```text
+使用 $high-output-management。两条视频都在 13:00 交稿，各需剪辑 3 小时；唯一剪辑员 13:00–18:00 可用，两条都希望 18:00 发布。先判断排不排得下，再告诉我需要拍板什么，不要假设有人加班。
+```
+
+<details>
+<summary>指定 Agent 或只安装一个 Skill</summary>
+
+装到当前项目的 Codex 和 Claude Code，包含两个 Skill：
 
 ```bash
-python3 scripts/install.py --dest ~/.codex/skills --dry-run
-python3 scripts/install.py --dest ~/.codex/skills
+npx skills@latest add LearnPrompt/qbs --skill qbs high-output-management -a codex claude-code -y
 ```
 
-Claude Code，指定对应目录：
+只装找书、读书、制作技能的流程：
 
 ```bash
-python3 scripts/install.py --dest ~/.claude/skills
+npx skills@latest add LearnPrompt/qbs --skill qbs
 ```
 
-仅安装第一本书：
+只装现有内容团队草案：
 
 ```bash
-python3 scripts/install.py --dest ~/.codex/skills --skill high-output-management
+npx skills@latest add LearnPrompt/qbs --skill high-output-management
 ```
 
-也可以直接复制 `skills/qbs/` 和 `skills/high-output-management/` 到支持 Agent Skills 的宿主目录。宿主发现技能的方式可能不同；安装脚本验证文件一致性，**不代表每种宿主都已实机验收**。刷新技能列表或新开会话后，用上面的 `$qbs` / `$high-output-management` 话术试用。
+</details>
 
-预检查发现目标目录已存在时，脚本会在复制任何包前停止。每个包先暂存并校验再放入目标；安装中遇到异常会保留已经完整安装的包及并发出现的用户文件，并报告失败，不用删除整目录来回滚。更新前自行备份并比较本地改动，不覆盖已有私人规则。
+安装后新开会话，调用对应 Skill 即可。本次已实测从 GitHub 安装两个 Skill 及分别单装，并逐文件核对正文、模板和引用资料。[查看安装实测](docs/npx-install-check.md)。已有同名 Skill 且改过内容时，先备份再更新。
+
+需要手动复制或维护仓库，见[手动安装](docs/manual-install.md)。
 
 ## 验证
+
+维护者检出仓库后运行：
 
 ```bash
 python3 scripts/validate.py

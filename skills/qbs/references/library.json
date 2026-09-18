@@ -46,6 +46,21 @@
       "cover_url": "https://www.debuggingbook.org/html/PICS/wordcloud.png",
       "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/the-debugging-book.md",
       "status": "simulated"
+    },
+    {
+      "id": "make-time",
+      "title": "Make Time",
+      "author": "Jake Knapp & John Zeratsky",
+      "isbn": "9780525572428",
+      "skill": "make-time",
+      "skill_path": "skills/make-time",
+      "book_path": "books/make-time.md",
+      "scope": "AI 时代注意力碎片化、每天选一个 Highlight 并保护它、集中处理替代逐条响应",
+      "reading_scope": "通过结构化书评回读 Highlight 章（战术 1-16）和 Laser 章（战术 17-60）的完整框架与战术清单；未取得出版社正文全文",
+      "source_url": "https://maketime.blog",
+      "cover_url": "https://images4.penguinrandomhouse.com/cover/9780525572428",
+      "book_url": "https://github.com/LearnPrompt/qbs/blob/main/books/make-time.md",
+      "status": "draft"
     }
   ]
 }

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Make Time · 找回被打碎的一天"
+  short_description: "每天选一个 Highlight 并保护它，用集中查看替代逐条响应，把碎片化的一天变成有重心的一天"
+  default_prompt: "使用 $make-time，帮我规划今天的 Highlight，识别可能打断它的干扰源，安排集中处理时段，一天结束时做一次简短复盘。"

@@ -28,6 +28,22 @@
 
 **从一个真实问题开始，做出有出处、能试用、可以继续修改的 Skill。你不必先系统学完这个领域。**
 
+### 用这条路线做出来的 Skill
+
+<table>
+<tr>
+<td align="center" width="33%"><a href="books/shape-up.md"><img src="assets/shape-up-cover.jpg" width="160" alt="Shape Up"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>控制小功能的范围</td>
+<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="assets/debugging-book-cover.png" width="160" alt="The Debugging Book"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>让调试停止猜测</td>
+<td align="center" width="33%"><a href="books/make-time.md"><img src="assets/make-time-cover.jpg" width="160" alt="Make Time"></a><br><a href="books/make-time.md"><strong>Make Time</strong></a><br>找回被打碎的一天<br><sub>draft</sub></td>
+</tr>
+</table>
+
+| Skill | 已读内容与验证 |
+|---|---|
+| `shape-up` | 完整读第 3、14 章；试跑覆盖范围收窄、临近截止、需求不清 |
+| `the-debugging-book` | 完整读 Introduction to Debugging 含练习答案；试跑含代码修复与证据不足场景 |
+| `make-time` | 通过结构化书评回读 Highlight 章和 Laser 章；draft，待补正文阅读 |
+
 <a id="workflow"></a>
 
 ## 从问题到自己的 Skill
@@ -100,25 +116,7 @@ npx skills@latest add LearnPrompt/qbs --skill qbs -a codex claude-code -y
 <a id="everyday-problems"></a>
 <a id="reading-status"></a>
 
-## 我们用这条路线在做什么
-
-从 Codex 里常见的两个问题出发，我们完整读了相关章节，做成下面两个可独立安装的 Skill。QBS 是制作这些 Skill 的方法，遇到新领域时仍从 QBS 开始。
-
-<table>
-<tr>
-<td align=”center” width=”50%”><a href=”books/shape-up.md”><img src=”https://basecamp-goods.com/cdn/shop/products/shape-up-square_1200x1200.jpg?v=1601482899” width=”180” alt=”Shape Up — 官方纸本封面”></a><br><a href=”books/shape-up.md”><strong>Shape Up</strong></a><br>控制小功能的范围<br><sub>官方纸本封面</sub></td>
-<td align=”center” width=”50%”><a href=”books/the-debugging-book.md”><img src=”https://www.debuggingbook.org/html/PICS/wordcloud.png” width=”180” alt=”The Debugging Book — 官网展示图 · 在线教材”></a><br><a href=”books/the-debugging-book.md”><strong>The Debugging Book</strong></a><br>让调试停止猜测<br><sub>官网展示图 · 在线教材</sub></td>
-</tr>
-</table>
-
-| Skill | 已读内容与验证 |
-|---|---|
-| `shape-up` | 完整读第 3、14 章；新任务试跑覆盖范围收窄、临近截止的质量问题、需求不清三个场景 |
-| `the-debugging-book` | 完整读 Introduction to Debugging，含练习答案；试跑包含实际代码修复与缺乏证据的场景 |
-
-[查看两本书的试跑输入、原始输出和逐项判定](evals/book-skills-2026-09-18/REPORT.md)。这是模拟任务验证，尚无真实团队效果或优于普通对话的结论。
-
-### 直接试用已经做好的 Skill
+## 直接试用已经做好的 Skill
 
 只需要其中一本时，保留对应名称即可。
 

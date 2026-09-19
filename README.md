@@ -18,31 +18,25 @@
 
 ## 想做一个 Skill，却不知道该把什么经验写进去
 
-每天都在用 Codex，遇到重复的问题，很自然就想把处理方法存成 Skill。
+每天都在用 Codex，遇到重复的问题，很自然就想把处理方法存成 Skill。可换到一个自己不熟悉的领域，问题就来了。没读过相关的书，也没积累多少经验，该写哪些步骤？AI 给的判断，自己又该怎么验？只把几轮聊天整理成文件，文件是有了，方法的依据还没着落。
 
-可换到一个自己不熟悉的领域，问题就来了。没读过相关的书，也没积累多少经验，该写哪些步骤？AI 给的判断，自己又该怎么验？
-
-只把几轮聊天整理成文件，文件是有了，方法的依据还没着落。
-
-所以我们做了 QBS。你先说清眼前的事，找书、取得正文、阅读和提炼交给 AI。围绕这一个问题读相关章节，把作者的方法、适用条件和例外，转成可以执行和检查的步骤。
-
-**从一个真实问题开始，做出有出处、能试用、可以继续修改的 Skill。你不必先系统学完这个领域。**
+所以我们做了 QBS。你先说清眼前的事，找书、取得正文、阅读和提炼交给 AI。围绕这一个问题读相关章节，把作者的方法、适用条件和例外，转成可以执行和检查的步骤。**从一个真实问题开始，做出有出处、能试用、可以继续修改的 Skill。你不必先系统学完这个领域。**
 
 ### 用这条路线做出来的 Skill
 
 <table>
 <tr>
-<td align="center" width="33%"><a href="books/shape-up.md"><img src="assets/shape-up-cover.jpg" width="160" alt="Shape Up"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>控制小功能的范围</td>
-<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="assets/debugging-book-cover.png" width="160" alt="The Debugging Book"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>让调试停止猜测</td>
-<td align="center" width="33%"><a href="books/make-time.md"><img src="assets/make-time-cover.jpg" width="160" alt="Make Time"></a><br><a href="books/make-time.md"><strong>Make Time</strong></a><br>找回被打碎的一天<br><sub>draft</sub></td>
+<td align="center" width="33%"><a href="books/shape-up.md"><img src="assets/shape-up-cover.jpg" height="200" alt="Shape Up"></a><br><a href="books/shape-up.md"><strong>Shape Up</strong></a><br>控制小功能的范围</td>
+<td align="center" width="33%"><a href="books/the-debugging-book.md"><img src="assets/debugging-book-cover.png" height="200" alt="The Debugging Book"></a><br><a href="books/the-debugging-book.md"><strong>The Debugging Book</strong></a><br>让调试停止猜测</td>
+<td align="center" width="33%"><a href="books/make-time.md"><img src="assets/make-time-cover.jpg" height="200" alt="Make Time"></a><br><a href="books/make-time.md"><strong>Make Time</strong></a><br>找回被打碎的一天<br><sub>draft</sub></td>
 </tr>
 </table>
 
-| Skill | 已读内容与验证 |
-|---|---|
-| `shape-up` | 完整读第 3、14 章；试跑覆盖范围收窄、临近截止、需求不清 |
-| `the-debugging-book` | 完整读 Introduction to Debugging 含练习答案；试跑含代码修复与证据不足场景 |
-| `make-time` | 通过结构化书评回读 Highlight 章和 Laser 章；draft，待补正文阅读 |
+| Skill | 解决什么问题 | 已读内容 |
+|---|---|---|
+| `shape-up` | AI 把小需求越做越大，不知道什么时候该停 | 完整读第 3、14 章；试跑 3 个场景 |
+| `the-debugging-book` | AI 修 bug 反复猜，说不清排除了什么 | 完整读 Introduction to Debugging 含练习 |
+| `make-time` | 一天被 AI 任务打成碎片，忙完什么都没做成 | 回读 Highlight 章 + Laser 章；draft |
 
 <a id="workflow"></a>
 
